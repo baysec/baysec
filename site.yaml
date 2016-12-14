@@ -26,6 +26,6 @@ sorter:
 publisher:
     github:
         type: hyde.ext.publishers.dvcs.Git
-        path: .
+        path: ../baysec.gh-pages
         url: git@github.com:baysec/baysec.git
         branch: gh-pages
