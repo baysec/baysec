@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+METHOD:PUBLISH
+VERSION:2.0
+PRODID:-//BaySec Creations//Hyde Jinja2 Templates 0.1//EN
+{% for post in resource.node.walk_resources_sorted_by_time() %}
+{% if post.meta.event_summary %}
+BEGIN:VEVENT
+SUMMARY:{{ post.meta.event_summary }}
+LOCATION:{{ post.meta.event_location }}
+DTSTART{% if post.meta.event_timezone %};TZID={{ post.meta.event_timezone }}{% endif %}:{{ post.meta.event_start }}
+DTEND{% if post.meta.event_timezone %};TZID={{ post.meta.event_timezone }}{% endif %}:{{ post.meta.event_end }}
+END:VEVENT
+{% endif %}
+{% endfor %}
+END:VCALENDAR

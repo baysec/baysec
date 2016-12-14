@@ -1,0 +1,1 @@
+For debugging: http://stackoverflow.com/questions/13436841/display-all-jinja-object-attributes
