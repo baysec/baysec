@@ -48,10 +48,9 @@
 </head>
 <body id="{{ resource.meta.id if resource.meta.id else resource.slug }}">
   {% block content %}
-  <div id="container">
+  <div class="site" id="main" role="main">
       {% block container %}
-      <div id="main" role="main">
-          <header class="banner clearfix">
+          <header class="banner clearfix title">
           {% block header -%}
             <h1>BaySec</h1>
             <h3>SF Bay Area Security Professional Meetup</h3>
@@ -61,12 +60,18 @@
           {% block main %}
           {% endblock main %}
           </section>
-      </div>
     {% endblock container %}
-  </div> <!--! end of #container -->
   <footer>
-      Powered by <a href="https://github.com/hyde/hyde">hyde</a>.
+	<div class="footer">
+	<div class="contact">
+	<ul>
+	<li><a href="/calendar.ics">Calendar</a></li>
+	<li><a href="https://twitter.com/search?f=tweets&vertical=default&q=%23baysec&src=typd">Twitter</a></li>
+	<li class="copyright">Brought to you by <a href="https://github.com/baysec/baysec">some folks</a>.</li>
+	</div>
+	</div>
   </footer>
+  </div>
   {% endblock content%}
   {% block js %}
   <!-- Javascript at the bottom for fast page loading -->

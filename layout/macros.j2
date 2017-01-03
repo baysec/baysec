@@ -1,6 +1,6 @@
 {% macro render_link(res, class=None) %}
 {% refer to res.relative_path as post %}
-<h3><a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a></h3>
+<a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a>
 {% endmacro %}
 
 {% macro render_excerpt(res, class=None) %}

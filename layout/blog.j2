@@ -4,19 +4,17 @@
 <article class="post">
 <nav class="post_nav">
 <a class="backlink" href="/">Back to list</a>
-<a class="prev{{' disabled' if not resource.prev_by_time }}"
-    title="{{ resource.prev_by_time.meta.title }}"
-    {% if resource.prev_by_time %}
-    href="{{ content_url(resource.prev_by_time.url) }}"{% endif %}>
-    Previous
-</a>
-
 <a class="next{{' disabled' if not resource.next_by_time }}"
     title="{{ resource.next_by_time.meta.title }}"
     {% if resource.next_by_time %}
     href="{{ content_url(resource.next_by_time.url) }}"{% endif %}>
-    Next
-</a>
+    Previous</a>
+
+<a class="prev{{' disabled' if not resource.prev_by_time }}"
+    title="{{ resource.prev_by_time.meta.title }}"
+    {% if resource.prev_by_time %}
+    href="{{ content_url(resource.prev_by_time.url) }}"{% endif %}>
+    Next</a>
 
 <br>
 <div id="twitter_share">
@@ -27,19 +25,8 @@
     <script type="text/javascript"
         src="https://platform.twitter.com/widgets.js"></script>
 </div>
-<div id="facebook_like">
-<iframe src="https://www.facebook.com/plugins/like.php?href&amp;layout=box_count&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=65"
-            scrolling="no"
-            frameborder="0"
-            style="border:none; overflow:hidden; width:450px; height:65px;"
-            allowTransparency="true"></iframe>
-</div>
 </nav>
-<h1 class="title">
-    <a href="{{ content_url(resource.url) }}">
-        {{ resource.meta.title }}
-    </a>
-</h1>
+<h1>{{ resource.meta.title }}</h1>
 <time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}">
     Posted: {{ resource.meta.created.strftime('%a, %d %b %Y') }}
 </time>

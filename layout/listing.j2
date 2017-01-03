@@ -3,8 +3,18 @@
 {% block main %}
 {% block page_title %}<h1 class="title">{{ resource.meta.title }}</h1>{% endblock %}
 
-<ul class="listing clearfix">
-{% for res in resource.node.walk_resources_sorted_by_time() %}
+<br/>
+<br/>
+<h2>Next Baysec Event</h2>
+<h2> {% for res in resource.node.walk_resources_sorted_by_time()[0:1] %}
+    {{ render_link(res) }}
+{% endfor %}
+</h2>
+
+<br/>
+<h2>Previous Baysec Events</h2>
+<ul class="posts">
+{% for res in resource.node.walk_resources_sorted_by_time()[1:] %}
 <li>
     {{ render_link(res) }}
 </li>
