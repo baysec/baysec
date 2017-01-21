@@ -48,4 +48,3 @@ class S3(Publisher):
             k.set_contents_from_filename(item.path)
             if redirect_meta:
                 k.set_metadata('website-redirect-location', redirect_meta)
-            k.set_acl('public-read')
