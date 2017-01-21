@@ -45,6 +45,10 @@ class S3(Publisher):
                     if redirect['from'] in item.path:
                         redirect_meta = redirect['to']
             k.key = item.path.replace(str(root), '')
-            k.set_contents_from_filename(item.path)
+            kmd5 = bucket.get_key(item.path.replace(str(root), '')).etag[1:-1]
+            #print 'f:', `kmd5, k.compute_md5(open(item.path))[0]`
+            if kmd5 != k.compute_md5(open(item.path))[0]:
+                print 'updating:', `item.path.replace(str(root), '')`
+                k.set_contents_from_filename(item.path)
             if redirect_meta:
                 k.set_metadata('website-redirect-location', redirect_meta)
