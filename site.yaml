@@ -24,8 +24,6 @@ sorter:
             source.kind: html
             meta.listable: true
 publisher:
-    github:
-        type: hyde.ext.publishers.dvcs.Git
-        path: ../baysec.gh-pages
-        url: git@github.com:baysec/baysec.git
-        branch: gh-pages
+    s3:
+        type: publishers.s3.S3
+        bucket: baysec-funkthat-com

@@ -1,0 +1,2 @@
+git+git://github.com/jmgurney/hyde.git@c8a8aafe081ce7bf9ea90b7e260914522e546210
+boto
