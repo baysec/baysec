@@ -46,7 +46,7 @@ class S3(Publisher):
                         redirect_meta = redirect['to']
             k.key = item.path.replace(str(root), '')
             kmd5 = bucket.get_key(item.path.replace(str(root), ''))
-            print 'f:', `item.path`, `kmd5.etag[1:-1], k.compute_md5(open(item.path))[0]`
+            #print 'f:', `item.path`, `kmd5.etag[1:-1], k.compute_md5(open(item.path))[0]`
             if kmd5 is None or \
               kmd5.etag[1:-1] != k.compute_md5(open(item.path))[0]:
                 print 'updating:', `item.path.replace(str(root), '')`
