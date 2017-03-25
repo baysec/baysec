@@ -12,6 +12,7 @@ Instructions
 1. Clone this repository: git clone git@github.com:baysec/baysec.git
 2. Change directory in the cloned repo: cd baysec
 3. Make sure deploy directory is clean: rm -rf deploy
+   This is needed as hyde does not track deps properly.
 4. Generate new content: hyde gen
 5. Make sure AWS keys are in environment: . ./.key.txt
 6. Publish to S3: hyde publish
